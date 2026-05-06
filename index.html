@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<title>PristinePro | High-End Industrial Washing</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-error-container": "#93000a",
+                    "background": "#f8fafc",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-container-low": "#f3f3f4",
+                    "secondary-fixed-dim": "#9fcaff",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-background": "#1a1c1c",
+                    "secondary": "#0061a5",
+                    "tertiary-fixed": "#dde3eb",
+                    "on-tertiary-container": "#989fa6",
+                    "on-secondary-fixed-variant": "#00497e",
+                    "on-secondary-fixed": "#001d37",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "primary": "#002045",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed": "#001b3c",
+                    "inverse-primary": "#adc7f7",
+                    "surface-dim": "#dadada",
+                    "primary-fixed": "#d6e3ff",
+                    "primary-container": "#1a365d",
+                    "tertiary": "#1b2127",
+                    "outline": "#74777f",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary-fixed": "#d2e4ff",
+                    "on-secondary-container": "#004172",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#161c22",
+                    "on-surface-variant": "#43474e",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "secondary-container": "#66affe",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "surface-variant": "#e2e2e2",
+                    "tertiary-container": "#30363c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "stack-md": "24px",
+                    "container-max": "1280px",
+                    "stack-sm": "12px",
+                    "section-padding": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-lg": ["Public Sans"],
+                    "h3": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Public Sans"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html { zoom: 0.9; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-dark {
+            background: rgba(0, 32, 69, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tilt-3d {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .card-lift {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .card-lift:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px -20px rgba(0, 32, 69, 0.2);
+        }
+
+        .dot-pattern {
+            background-image: radial-gradient(#002045 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .premium-shadow {
+            box-shadow: 0 20px 50px -12px rgba(0, 32, 69, 0.15);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        .perspective-container {
+            perspective: 2000px;
+        }
+        
+        .hero-title-mask {
+            background: linear-gradient(to right, #002045, #0061a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest/80 backdrop-blur-2xl sticky top-0 z-[100] border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
+<div class="text-h3 font-h3 font-bold text-primary tracking-tighter">PristinePro</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary relative after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-primary font-bold" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="pricing.html">Pricing</a>
+</div>
+<a href="quote.html" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-secondary active:scale-95 transition-all duration-300 shadow-xl shadow-primary/20 text-label-caps">
+            Get a Quote
+        </a>
+</nav>
+</header>
+<!-- Redesigned Hero Section -->
+<header class="relative min-h-[95vh] flex items-center overflow-hidden perspective-container bg-primary">
+<!-- High-Quality Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Industrial Facility Background" class="w-full h-full object-cover opacity-40 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-TD_0tK0dJqD_PjUO2RMsxPIgXsiviksy9XtUUhSfVgmgLWYQ_vyD9twtlz7qY1NxzqpZPFAoehx5CIFio_fnZksyUSpJLdtx0o3A5QGT4GtP_D2ARcNsa8ndgquacZZ8_F-SsBI1mVVAD5AM6buRg_AylsswkwL0H1yeTyGMF0dImBD2pgWFpKJo-Z2iPlj3FHxzvjSKrZrcdqC5iQFEyg6gBLzn2SK2Mkwt0AoxvU0qh_ZdzAWKwJWefF9iiA7QI4QmAN5GGMg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 w-full py-20">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="reveal-on-scroll">
+<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 font-label-caps text-[11px] border border-white/20 mb-8 uppercase tracking-[0.2em]">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+                    Industrial Excellence Standard
+                </div>
+<h1 class="font-h1 text-[72px] lg:text-[88px] text-white leading-[0.95] tracking-tight mb-8">
+                    Industrial <br/><span class="italic font-medium text-secondary-fixed">Strength</span> <br/>Restoration.
+                </h1>
+<p class="font-body-lg text-white/70 max-w-xl text-xl leading-relaxed mb-10">
+                    Precision exterior maintenance for high-value industrial assets and elite estates. We remove decades of oxidation with surgical chemical precision.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-secondary text-white px-10 py-5 font-bold rounded-xl shadow-2xl shadow-secondary/30 hover:bg-white hover:text-primary hover:-translate-y-2 transition-all duration-500 flex items-center gap-3 active:scale-95 group">
+                        Start Your Project
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/5 backdrop-blur-md text-white border border-white/20 px-10 py-5 font-bold rounded-xl hover:bg-white/10 transition-all duration-300">
+                        View Case Studies
+                    </button>
+</div>
+<div class="flex items-center gap-8 mt-16 pt-10 border-t border-white/10">
+<div class="flex -space-x-4">
+<div class="w-14 h-14 rounded-full border-4 border-primary bg-secondary-fixed flex items-center justify-center font-bold text-primary">A</div>
+<div class="w-14 h-14 rounded-full border-4 border-primary bg-primary-fixed flex items-center justify-center font-bold text-primary">B</div>
+<div class="w-14 h-14 rounded-full border-4 border-primary bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xs font-bold">500+</div>
+</div>
+<p class="text-white/50 font-medium text-sm tracking-wide">TRUSTED BY THE WORLD'S LEADING <br/><span class="text-white font-bold">FACILITY MANAGERS</span></p>
+</div>
+</div>
+<div class="hidden lg:block perspective-container">
+<div class="tilt-3d relative w-full aspect-square reveal-on-scroll" style="transition-delay: 0.2s">
+<div class="absolute inset-0 bg-secondary/20 blur-[100px] rounded-full"></div>
+<img alt="Cleaning Detail" class="w-full h-full object-cover rounded-[40px] shadow-2xl transform rotate-3 scale-95 border-8 border-white/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXd_LAfDkwuLYOA7iHyqHOe6-bw4hgbqTkbGpLEKwngtpvoELP96hDyuT9LXK2oQmmRXmREQocSorZTJM3PdZwTpHG08Nh46-Vivl2Erf_XTenPEBsGbuRbq1MQr1Cq552naBEgfLOaPq0sexrjrUmRdswDdB4L-8Z_9ue5VZdfss5yEHcjEjJT9qyi_RCf0-KdY8BdWTqRpJHNjgjmFmP2Aojc1Vw8nwF5FYl3QfrUgEjswQgCXC8KQIgmE25uRvxj_50n6jnJPs"/>
+<div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-3xl shadow-2xl max-w-xs reveal-on-scroll" style="transition-delay: 0.4s">
+<div class="text-secondary font-black text-4xl mb-2">99.9%</div>
+<p class="text-on-surface-variant font-bold text-sm">Contaminant removal guaranteed on all industrial surfaces.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Trusted Partners Logo Marquee -->
+<section class="bg-white py-16 border-y border-outline-variant/10 overflow-hidden reveal-on-scroll">
+<div class="max-w-container-max mx-auto px-gutter mb-10">
+<p class="text-center text-primary/40 font-label-caps text-[11px] tracking-[0.4em] uppercase">Trusted by Global Industry Leaders</p>
+</div>
+<div class="flex overflow-hidden relative whitespace-nowrap">
+<div class="flex gap-24 items-center animate-marquee">
+<span class="text-primary/20 text-3xl font-black tracking-tighter">RELIABLE CO.</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">ESTATE CARE</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">METRO INDUSTRIAL</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">CLEAN PATH</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">PRISTINE PROPERTIES</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">ELITE LOGISTICS</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">URBAN RENEW</span>
+<!-- Duplicated for seamless loop -->
+<span class="text-primary/20 text-3xl font-black tracking-tighter">RELIABLE CO.</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">ESTATE CARE</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">METRO INDUSTRIAL</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">CLEAN PATH</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">PRISTINE PROPERTIES</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">ELITE LOGISTICS</span>
+<span class="text-primary/20 text-3xl font-black tracking-tighter">URBAN RENEW</span>
+</div>
+</div>
+</section>
+<!-- Expanded Services Grid with 3D Depth -->
+<section class="py-32 bg-surface-container-low/50 relative">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="max-w-3xl mb-24 reveal-on-scroll">
+<h2 class="text-h2 text-6xl text-primary mb-8 leading-tight">Advanced Solutions for <br/><span class="text-secondary italic">Every Dimension.</span></h2>
+<p class="text-xl text-on-surface-variant leading-relaxed">Our methodology combines advanced chemical engineering with industrial-grade equipment to restore surfaces to their original specification.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Service Card 1 -->
+<div class="glass-card p-10 rounded-[40px] card-lift tilt-3d reveal-on-scroll" style="transition-delay: 0.1s">
+<div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">factory</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Industrial Fleet &amp; Facility</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Heavy-duty degreasing and carbon removal for manufacturing plants, fleet vehicles, and logistics hubs.</p>
+<a class="flex items-center gap-2 font-bold text-secondary group" href="#">
+                    View Specifications <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="glass-card p-10 rounded-[40px] card-lift tilt-3d reveal-on-scroll" style="transition-delay: 0.2s">
+<div class="w-16 h-16 bg-secondary text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">home_work</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Estate Soft-Wash</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Low-pressure chemical restoration for premium siding, masonry, and architectural features.</p>
+<a class="flex items-center gap-2 font-bold text-secondary group" href="#">
+                    View Specifications <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="glass-card p-10 rounded-[40px] card-lift tilt-3d reveal-on-scroll" style="transition-delay: 0.3s">
+<div class="w-16 h-16 bg-on-secondary-container text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">roofing</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Eco-Roof Restoration</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Specialized fungal treatments that eliminate organic growth while preserving structural integrity.</p>
+<a class="flex items-center gap-2 font-bold text-secondary group" href="#">
+                    View Specifications <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="glass-card p-10 rounded-[40px] card-lift tilt-3d reveal-on-scroll" style="transition-delay: 0.4s">
+<div class="w-16 h-16 bg-primary-container text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">local_parking</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Concrete Resurfacing</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Heated high-pressure cleaning for parking structures, runways, and extensive industrial floor areas.</p>
+<a class="flex items-center gap-2 font-bold text-secondary group" href="#">
+                    View Specifications <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Service Card 5 -->
+<div class="glass-card p-10 rounded-[40px] card-lift tilt-3d reveal-on-scroll" style="transition-delay: 0.5s">
+<div class="w-16 h-16 bg-surface-tint text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+<span class="material-symbols-outlined text-3xl">cleaning_services</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Oxidation Removal</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Chemical restoration of sun-damaged metal siding, storage tanks, and aluminum surfaces.</p>
+<a class="flex items-center gap-2 font-bold text-secondary group" href="#">
+                    View Specifications <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Large Interactive CTA Card -->
+<div class="bg-primary p-1 rounded-[40px] card-lift tilt-3d reveal-on-scroll group" style="transition-delay: 0.6s">
+<div class="bg-primary w-full h-full rounded-[38px] p-10 flex flex-col justify-between border border-white/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[80px] -mr-32 -mt-32"></div>
+<div>
+<h3 class="text-3xl font-bold text-white mb-4">Custom Industrial <br/>Maintenance</h3>
+<p class="text-white/60 mb-10">Tailored schedules for complex facility needs and large-scale operations.</p>
+</div>
+<button class="bg-white text-primary py-5 rounded-2xl font-bold text-lg hover:bg-secondary hover:text-white transition-colors">
+                        Request Site Audit
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Stats Section -->
+<section class="py-32 bg-white relative overflow-hidden">
+<div class="absolute inset-0 dot-pattern opacity-[0.03]"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="reveal-on-scroll">
+<h2 class="text-h2 text-5xl text-primary mb-8 leading-tight">Quantifiable <br/><span class="text-secondary italic">Superiority</span></h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-12">We don't just wash surfaces; we manage assets. Our precision protocols ensure longer surface lifespan and reduced maintenance overhead for our clients.</p>
+<div class="grid grid-cols-2 gap-10">
+<div class="reveal-on-scroll" style="transition-delay: 0.1s">
+<div class="text-5xl font-black text-primary mb-2 flex items-baseline">
+<span class="stat-counter" data-target="500">500</span><span class="text-secondary">+</span>
+</div>
+<p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest">Projects Completed</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 0.2s">
+<div class="text-5xl font-black text-primary mb-2 flex items-baseline">
+<span class="stat-counter" data-target="100">100</span><span class="text-secondary">%</span>
+</div>
+<p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest">Satisfaction Score</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 0.3s">
+<div class="text-5xl font-black text-primary mb-2 flex items-baseline">
+<span class="stat-counter" data-target="15">15</span><span class="text-secondary">min</span>
+</div>
+<p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest">Average Response</p>
+</div>
+<div class="reveal-on-scroll" style="transition-delay: 0.4s">
+<div class="text-5xl font-black text-primary mb-2 flex items-baseline">
+<span class="text-secondary">$</span><span class="stat-counter" data-target="50">50</span><span class="text-secondary">M+</span>
+</div>
+<p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest">Assets Protected</p>
+</div>
+</div>
+</div>
+<div class="relative reveal-on-scroll" style="transition-delay: 0.3s">
+<div class="aspect-square bg-surface-container rounded-[60px] relative overflow-hidden group">
+<img alt="Service Hero" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGE3T5eNMbaEvTqKuXZIMBhB9hQssWv4oWgrZE_0_1tcB2NLqO2fFkOGMNtBUrpmFdXll7dk1W4C-4c3llMhfONNBXhrjRgKKXa481EB4KwgHD80xl58oVg0DCw-ZLj0lO7FI5RdQhaUOpVGOAs33Ax5DrrI9qcOz5KjuC8mzwarrOXPahKXlpt8T1ny1W6g-90-P0y5jlHzc-Oxw8IcUpIDeZpSADmVVkr7XnIvjvYRsFZFx7_GrbCPsCTgP7AJ8V1uQPQVrkBKs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-12 left-12 right-12 glass-card p-8 rounded-3xl">
+<p class="text-primary font-bold text-lg mb-4">"The standard of excellence PristinePro brings to our industrial parks is unmatched in the industry."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary"></div>
+<div>
+<div class="font-bold text-primary">Marcus Thorne</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">Director, Metro Logistics</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Estimate CTA Section (Updated for Depth) -->
+<section class="py-32 bg-primary relative overflow-hidden reveal-on-scroll">
+<div class="absolute inset-0 opacity-[0.05] dot-pattern"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="reveal-on-scroll">
+<h2 class="text-h2 text-6xl text-white mb-10 leading-tight">Secure Your <br/><span class="text-secondary-fixed italic">Property Assessment</span></h2>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md text-white flex items-center justify-center font-bold text-2xl border border-white/20 group-hover:bg-secondary transition-colors">01</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Detailed Site Audit</h4>
+<p class="text-white/60 text-lg leading-relaxed">Our experts analyze surface types and contaminant levels to provide a surgical approach.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md text-white flex items-center justify-center font-bold text-2xl border border-white/20 group-hover:bg-secondary transition-colors">02</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Transparent Logic Quote</h4>
+<p class="text-white/60 text-lg leading-relaxed">Itemized reporting with fixed-fee structures. No hidden environmental surcharges.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-dark p-12 rounded-[50px] shadow-2xl reveal-on-scroll" style="transition-delay: 0.2s">
+<h3 class="text-2xl font-bold text-white mb-10">Priority Quote Request</h3>
+<form class="space-y-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase">Full Name</label>
+<input class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl focus:border-secondary transition-all outline-none text-white" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase">Company</label>
+<input class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl focus:border-secondary transition-all outline-none text-white" placeholder="Corp Inc." type="text"/>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase">Service Required</label>
+<select class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl focus:border-secondary transition-all outline-none text-white appearance-none">
+<option class="bg-primary">Commercial/Industrial</option>
+<option class="bg-primary">Estate Maintenance</option>
+<option class="bg-primary">Specialized Restoration</option>
+</select>
+</div>
+<button class="w-full bg-secondary text-white py-6 rounded-2xl font-bold text-xl shadow-2xl hover:bg-white hover:text-primary transition-all duration-300 transform active:scale-95">
+                        Submit Priority Request
+                    </button>
+<p class="text-center text-white/30 text-xs uppercase tracking-widest">Guaranteed 15-minute response during business hours</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-32 pb-16 border-t border-outline-variant/10 reveal-on-scroll">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
+<div class="lg:col-span-5 space-y-10">
+<span class="text-4xl font-h1 font-extrabold text-primary tracking-tighter">PristinePro</span>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-sm">The industrial gold standard in surface restoration and high-value property preservation.</p>
+<div class="flex gap-6">
+<a class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300" href="#"><span class="material-symbols-outlined text-2xl">language</span></a>
+<a class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300" href="#"><span class="material-symbols-outlined text-2xl">photo_camera</span></a>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="space-y-8">
+<h5 class="font-bold text-primary uppercase tracking-widest text-xs">Divisions</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Industrial Services</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Estate Care</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Fleet Washing</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Gov Contracts</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h5 class="font-bold text-primary uppercase tracking-widest text-xs">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Protocols</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Chemical Data</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="gallery.html">Gallery</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Certifications</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h5 class="font-bold text-primary uppercase tracking-widest text-xs">Inquiries</h5>
+<p class="text-primary font-black text-2xl tracking-tighter">1-800-WASH-PRO</p>
+<p class="text-on-surface-variant font-medium">concierge@pristinepro.com</p>
+<p class="text-on-surface-variant text-sm leading-relaxed opacity-60">HQ: 1250 Industrial Blvd, <br/>Suite 400, Chicago, IL</p>
+</div>
+</div>
+</div>
+<div class="pt-16 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-10">
+<p class="text-on-surface-variant text-sm font-medium">© 2024 PristinePro Industrial Washing. Engineered for Excellence.</p>
+<div class="flex gap-10 text-sm font-bold text-primary">
+<a class="hover:text-secondary transition-colors" href="#">Privacy Framework</a>
+<a class="hover:text-secondary transition-colors" href="#">Service Agreement</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Nav Bar -->
+<nav class="md:hidden fixed bottom-6 left-6 right-6 z-50 glass-card rounded-[24px] border border-white/50 premium-shadow px-4 py-3">
+<div class="flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="index.html">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant" href="services.html">
+<span class="material-symbols-outlined">cleaning_services</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Services</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-white bg-primary rounded-2xl px-5 py-2 shadow-lg" href="quote.html">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Quote</span>
+</a>
+</div>
+</nav>
+<script>
+    // 1. Reveal animations on scroll
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // 2. 3D tilt effect
+    document.querySelectorAll('.tilt-3d').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const tiltX = (y - 0.5) * 20;
+            const tiltY = (0.5 - x) * 20;
+            card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    });
+
+    // 3. Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('py-3', 'shadow-2xl');
+            nav.classList.remove('py-5');
+        } else {
+            nav.classList.remove('py-3', 'shadow-2xl');
+            nav.classList.add('py-5');
+        }
+    });
+
+    // 4. Simple Stat Counter
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const countTo = parseInt(target.getAttribute('data-target'));
+                let current = 0;
+                const increment = countTo / 50;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= countTo) {
+                        target.innerText = countTo;
+                        clearInterval(interval);
+                    } else {
+                        target.innerText = Math.floor(current);
+                    }
+                }, 40);
+                statObserver.unobserve(target);
+            }
+        });
+    });
+    document.querySelectorAll('.stat-counter').forEach(stat => statObserver.observe(stat));
+</script>
+</body></html>

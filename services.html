@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<title>PristinePro | Premium Exterior Services</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&amp;family=Inter:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "on-tertiary-fixed": "#161c22",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#adc7f7",
+                        "secondary-fixed": "#d2e4ff",
+                        "on-surface-variant": "#43474e",
+                        "surface-tint": "#455f88",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#66affe",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#30363c",
+                        "on-secondary-fixed": "#001d37",
+                        "on-primary-container": "#86a0cd",
+                        "primary": "#002045",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed": "#dde3eb",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "secondary": "#0061a5",
+                        "secondary-fixed-dim": "#9fcaff",
+                        "on-secondary-container": "#004172",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#adc7f7",
+                        "on-tertiary-container": "#989fa6",
+                        "tertiary": "#1b2127",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-bright": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "outline": "#74777f",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#00497e",
+                        "primary-container": "#1a365d",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "container-max": "1280px",
+                        "section-padding": "80px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Public Sans"],
+                        "h1": ["Inter"],
+                        "h3": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        html { zoom: 0.9; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(173, 199, 247, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(0, 97, 165, 0.05) 0px, transparent 50%);
+        }
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-cascade > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-section.active .animate-cascade > *:nth-child(1) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+        .reveal-section.active .animate-cascade > *:nth-child(2) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+        .reveal-section.active .animate-cascade > *:nth-child(3) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+        .reveal-section.active .animate-cascade > *:nth-child(4) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+
+        .perspective-container {
+            perspective: 2000px;
+        }
+        .tilt-card {
+            transition: transform 0.2s ease-out;
+            transform-style: preserve-3d;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .floating-card {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .floating-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 40px 80px -15px rgba(26, 54, 93, 0.15);
+        }
+        .image-zoom-container {
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .image-zoom-container img {
+            transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .image-zoom-container:hover img {
+            transform: scale(1.1);
+        }
+        .btn-3d {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-3d:hover {
+            transform: translateY(-4px) translateZ(20px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* New Animations */
+        .step-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 97, 165, 0.2), transparent);
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .step-line::before { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden bg-mesh">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest/80 backdrop-blur-2xl sticky top-0 z-[100] border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
+<div class="text-h3 font-h3 font-bold text-primary tracking-tighter">PristinePro</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-primary relative after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-primary font-bold" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="pricing.html">Pricing</a>
+</div>
+<a href="quote.html" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-secondary active:scale-95 transition-all duration-300 shadow-xl shadow-primary/20 text-label-caps">
+            Get a Quote
+        </a>
+</nav>
+</header>
+<main class="">
+<!-- Hero Section -->
+<section class="relative py-section-padding overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="max-w-2xl reveal-section active">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mb-6 block opacity-80">Industrial Grade Excellence</span>
+<h1 class="font-h1 text-h1 text-primary mb-8 leading-[1.05]">Premium Exterior Washing Solutions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed max-w-xl">From high-end residential estates to heavy-duty commercial facilities, we deploy surgical precision in advanced industrial cleaning techniques.</p>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold transition-all hover:shadow-2xl hover:shadow-secondary/30 hover:-translate-y-1 btn-3d">View Case Studies</button>
+<button class="border border-outline px-8 py-4 rounded-xl font-bold transition-all hover:bg-surface-container btn-3d">Learn More</button>
+</div>
+</div>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[80%] hidden lg:block perspective-container">
+<div class="tilt-card w-full h-full">
+<img alt="High-end commercial cleaning" class="w-full h-full object-cover rounded-l-[120px] shadow-[-20px_20px_60px_rgba(0,0,0,0.1)] border-l border-y border-white/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDWVyn0IYp-AHfcV8BmIvx_okfZEbn7bEXAFHAy7tWjs7D4WTfTHa1B51vITymSnhKNGqwfC0v8fmPoHVzNc4hGQO93mRnPNX7o9X4GC2zmKm2FsQTo2exKOm0emIIMJSAWr5WWGlPVxlhqkiNV-YldxTZKwF18xt2Ka7RS-JGJktKaRefPgIhPX-I8Ys5uB7IW5QRYr-_zTR7a-0_rnhbb038xoYCYEcF1XhI_mr6Gz69kzh67YQrvh1U_j2wXcYW8AOo9J6Xk14"/>
+</div>
+</div>
+</section>
+<!-- Featured Service (New) -->
+<section class="py-24 relative overflow-hidden bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-10 parallax-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDWVyn0IYp-AHfcV8BmIvx_okfZEbn7bEXAFHAy7tWjs7D4WTfTHa1B51vITymSnhKNGqwfC0v8fmPoHVzNc4hGQO93mRnPNX7o9X4GC2zmKm2FsQTo2exKOm0emIIMJSAWr5WWGlPVxlhqkiNV-YldxTZKwF18xt2Ka7RS-JGJktKaRefPgIhPX-I8Ys5uB7IW5QRYr-_zTR7a-0_rnhbb038xoYCYEcF1XhI_mr6Gz69kzh67YQrvh1U_j2wXcYW8AOo9J6Xk14');"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="perspective-container">
+<div class="tilt-card rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group">
+<img alt="Advanced Industrial Cleaning" class="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARVBJ8ZUo49wRWlwax_Jk5xvNgAjjdCp1YFNvRrZz5ExpCDpJX3O3KJ1F9oN7S71A6hnuDXWjt5cOktjSD-qVRRdsPPKtgzU-5EGO7QmVNS-KNDCu4XdFdxsQAj068zLEca3Ug5TEJ8cZEXvbjIDYk92KnK2uKBXRu_HImLBE6ECET9kQifZaBsoc2QaxebkFJov2Y_YYOnsFQ5gGa82j6Qsw30PlQ17L0vtxqOOdAi503-DlYUsDyxbUy9HCMSq_xp0E_K4BUIVI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-10 left-10 right-10">
+<span class="bg-secondary text-on-secondary px-4 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase mb-4 inline-block">Flagship Service</span>
+<h3 class="text-white text-3xl font-h1 mb-2">Ultra-High Pressure Restoration</h3>
+<p class="text-white/70">Surgical precision for historic masonry and industrial concrete.</p>
+</div>
+</div>
+</div>
+<div class="reveal-section">
+<h2 class="font-h2 text-[48px] text-white mb-8 leading-tight">Setting the Standard in Deep Restoration</h2>
+<p class="text-white/70 text-lg mb-10 leading-relaxed">Our proprietary 4-stage restoration process doesn't just clean—it revitalizes materials to their original architectural intent. We combine thermal control with precise PSI adjustments to ensure absolute safety for delicate substrates.</p>
+<div class="space-y-6 mb-12">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl">check</span>
+</div>
+<div>
+<h5 class="text-white font-bold mb-1">Thermal-Shock Prevention</h5>
+<p class="text-white/60 text-sm">Gradual temperature ramping to preserve crystalline structures in stone.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl">check</span>
+</div>
+<div>
+<h5 class="text-white font-bold mb-1">Bio-Safe Chelation</h5>
+<p class="text-white/60 text-sm">Non-toxic binding agents that pull deep contaminants without runoff.</p>
+</div>
+</div>
+</div>
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-secondary hover:text-white transition-all btn-3d">Request Detailed Specs</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Driveway Cleaning (Restyled) -->
+<section class="py-section-padding bg-surface-container-low/40 relative" id="services">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-16 reveal-section">
+<span class="font-label-caps text-secondary tracking-widest mb-4 block">OUR CORE CAPABILITIES</span>
+<h2 class="font-h2 text-[42px] text-primary">Masterclass Surface Management</h2>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="reveal-section">
+<div class="glass-panel p-10 rounded-[32px] floating-card shadow-xl border border-white/60 group hover:border-secondary/30 transition-all">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-20 h-20 rounded-3xl bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-5xl group-hover:text-on-primary transition-colors" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div>
+<h2 class="font-h2 text-3xl text-primary tracking-tight">Driveway Restoration</h2>
+<p class="text-secondary font-bold text-sm">Residential &amp; Professional</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 leading-relaxed">Systematic removal of hydrocarbon stains, oxidation, and biological growth using proprietary emulsifiers. We go beyond the surface to treat the pores of your concrete.</p>
+<div class="grid sm:grid-cols-2 gap-6 mb-12">
+<div class="bg-white/50 p-6 rounded-2xl border border-outline-variant/30">
+<h5 class="font-bold text-primary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">verified_user</span> 
+                                        Value Growth
+                                    </h5>
+<ul class="text-sm space-y-2 text-on-surface-variant">
+<li>• 5-8% Curb Appeal Boost</li>
+<li>• Preservation of Sealants</li>
+<li>• Pre-Sale Optimization</li>
+</ul>
+</div>
+<div class="bg-white/50 p-6 rounded-2xl border border-outline-variant/30">
+<h5 class="font-bold text-primary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">shield_with_heart</span>
+                                        Eco-Defense
+                                    </h5>
+<ul class="text-sm space-y-2 text-on-surface-variant">
+<li>• No Harsh Runoff</li>
+<li>• Plant-Safe Protocol</li>
+<li>• Pet-Friendly Results</li>
+</ul>
+</div>
+</div>
+<a class="flex items-center justify-between group/link p-4 rounded-xl bg-primary/5 hover:bg-secondary hover:text-white transition-all duration-300" href="#">
+<span class="font-bold uppercase tracking-widest text-xs">Explore Technical Protocol</span>
+<span class="material-symbols-outlined group-hover/link:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6 reveal-section perspective-container">
+<div class="tilt-card image-zoom-container shadow-2xl">
+<img alt="High-pressure cleaning detail" class="w-full h-96 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARVBJ8ZUo49wRWlwax_Jk5xvNgAjjdCp1YFNvRrZz5ExpCDpJX3O3KJ1F9oN7S71A6hnuDXWjt5cOktjSD-qVRRdsPPKtgzU-5EGO7QmVNS-KNDCu4XdFdxsQAj068zLEca3Ug5TEJ8cZEXvbjIDYk92KnK2uKBXRu_HImLBE6ECET9kQifZaBsoc2QaxebkFJov2Y_YYOnsFQ5gGa82j6Qsw30PlQ17L0vtxqOOdAi503-DlYUsDyxbUy9HCMSq_xp0E_K4BUIVI"/>
+</div>
+<div class="tilt-card image-zoom-container shadow-2xl mt-12">
+<img alt="Clean driveway results" class="w-full h-96 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7VPX455tlE9kFtsM1MbJm5TQwtNI2RFMkDJuUVgc33XUGvgSMQvpf8XBaf7CQN1kA0lQMTnCF8FMH03ZxHJuMD44XtFzLmy-y7mcAQ0E03ys1HoyGSq1fvm1Uv1wh-O3GxZ8H0APrGavwJt5pwIryNTl9vzOavZSXqaJ3n5VikfYmsKuKsdpLJvLUD_y545ILOJQUl8eHBDBKSeUpdlCBe4GQldGtcSGqukp5Z5MmewLV8cXYopFOWtJ8_OgEO6AYUphJ6TplO_A"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Process Timeline (New) -->
+<section class="py-24 bg-white relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-20 reveal-section">
+<h2 class="font-h2 text-4xl text-primary mb-4">Precision Workflow Protocol</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our methodical approach ensures zero property damage and 100% decontamination.</p>
+</div>
+<div class="relative step-line flex flex-col md:flex-row justify-between items-start gap-12 md:gap-4">
+<div class="relative z-10 flex-1 group text-center md:text-left reveal-section">
+<div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto md:mx-0 shadow-lg group-hover:scale-110 transition-transform">01</div>
+<h4 class="font-bold text-primary mb-2">Saturation Analysis</h4>
+<p class="text-sm text-on-surface-variant">Detailed substrate testing to determine moisture absorption and stain depth.</p>
+</div>
+<div class="relative z-10 flex-1 group text-center md:text-left reveal-section" style="transition-delay: 200ms;">
+<div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto md:mx-0 shadow-lg group-hover:scale-110 transition-transform">02</div>
+<h4 class="font-bold text-primary mb-2">Surfactant Prime</h4>
+<p class="text-sm text-on-surface-variant">Application of emulsifiers that break bond tension without scrubbing.</p>
+</div>
+<div class="relative z-10 flex-1 group text-center md:text-left reveal-section" style="transition-delay: 400ms;">
+<div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto md:mx-0 shadow-lg group-hover:scale-110 transition-transform">03</div>
+<h4 class="font-bold text-primary mb-2">Kinetic Extraction</h4>
+<p class="text-sm text-on-surface-variant">Rotary high-speed extraction that lifts grime without streaking.</p>
+</div>
+<div class="relative z-10 flex-1 group text-center md:text-left reveal-section" style="transition-delay: 600ms;">
+<div class="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto md:mx-0 shadow-lg group-hover:scale-110 transition-transform">04</div>
+<h4 class="font-bold text-primary mb-2">Substrate Cure</h4>
+<p class="text-sm text-on-surface-variant">pH neutralization to prevent future moss growth and white efflorescence.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Roof Washing Section -->
+<section class="py-section-padding relative overflow-hidden bg-fixed bg-cover parallax-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGIjXQjUtgR-ZnSZrUf7hbEl3W68UyHK14atse_wbriDrYBGFNVwdE5TYjJDp-GAhSKlHZ9BSBrGVVY6UchgV5d1Mvuxwr9A9Dkx2-wwfGXHIcB6Ram8t-FQOHQ7PA7kmEpFA4e-EAG28LlceFBs9snwOxqlNTVbNSzWwbxigLMgdQr0b-281JsiAxykWCJfhuqKak_hMs-nVvPlTAb9-4OeZhy1CFq9brhS7cU_MoxeUuAcoAZ-kWxmcdO_fYxq-bSPZpnorZif4');">
+<div class="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-20 reveal-section">
+<h2 class="font-h2 text-h2 text-primary mb-6">Non-Pressure Roof Remediation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">Protecting structural integrity from destructive Gloeocapsa Magma through bio-safe chemical neutralization.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-primary-container p-12 rounded-[40px] text-on-primary flex flex-col justify-between floating-card shadow-2xl relative overflow-hidden group reveal-section">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-secondary/40 transition-colors duration-1000"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 bg-white/5 backdrop-blur-md rounded-[28px] border border-white/10 flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+<span class="material-symbols-outlined text-secondary-container text-5xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h3 class="font-h3 text-[32px] mb-6 tracking-tight">Soft-Wash Methodology</h3>
+<p class="font-body-md opacity-80 mb-10 max-w-xl text-lg leading-relaxed">A low-pressure, science-led application process that eliminates mold and algae at the cellular level. This treatment is 100% manufacturer-approved and preserves your warranty.</p>
+<div class="flex flex-wrap gap-4 mb-12">
+<span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-wider">Zero Pressure</span>
+<span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-wider">Biodegradable</span>
+<span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-wider">2-Year Warranty</span>
+</div>
+</div>
+<button class="bg-secondary text-on-secondary px-10 py-5 rounded-full font-label-caps text-xs tracking-[0.2em] w-fit btn-3d hover:shadow-secondary/50">SCHEDULE INSPECTION</button>
+</div>
+<div class="bg-white p-10 rounded-[40px] border border-outline-variant/40 floating-card shadow-xl flex flex-col justify-center reveal-section animate-cascade">
+<h4 class="font-h3 text-[24px] text-primary mb-8 tracking-tight flex items-center gap-3">
+<span class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-2xl">stars</span>
+</span>
+                            Executive Benefits
+                        </h4>
+<ul class="space-y-8">
+<li class="flex items-start gap-4 group transition-all hover:translate-x-3">
+<div class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-green-600 text-lg">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary font-bold">Lifespan Extension</span>
+<span class="text-on-surface-variant text-sm">Prevents shingle granual loss.</span>
+</div>
+</li>
+<li class="flex items-start gap-4 group transition-all hover:translate-x-3">
+<div class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-green-600 text-lg">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary font-bold">Thermal Gain Reduction</span>
+<span class="text-on-surface-variant text-sm">Lighter roofs stay 20° cooler.</span>
+</div>
+</li>
+<li class="flex items-start gap-4 group transition-all hover:translate-x-3">
+<div class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-green-600 text-lg">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary font-bold">Full Aesthetic Return</span>
+<span class="text-on-surface-variant text-sm">Restores original colors.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Estimator CTA (Enhanced) -->
+<section class="py-section-padding bg-background relative reveal-section perspective-container">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="tilt-card bg-primary p-16 rounded-[60px] flex flex-col md:flex-row items-center justify-between gap-12 border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-mesh opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-1000"></div>
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-secondary/30 rounded-full blur-[100px] group-hover:scale-150 transition-transform duration-1000"></div>
+<div class="max-w-xl relative z-10" style="transform: translateZ(50px);">
+<span class="text-secondary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">INSTANT VALUATION</span>
+<h2 class="font-h2 text-[48px] leading-tight text-white mb-6 tracking-tight">Precision Pricing Engine</h2>
+<p class="font-body-lg text-body-lg text-white/70 leading-relaxed">Deploy our advanced estimation tool for transparent, instantaneous project valuations based on real-time substrate analysis and square footage.</p>
+</div>
+<div class="shrink-0 relative z-10" style="transform: translateZ(80px);">
+<a class="bg-secondary text-on-secondary px-20 py-8 rounded-3xl font-bold text-xl inline-flex items-center gap-6 shadow-2xl shadow-secondary/40 hover:shadow-secondary/60 active:scale-95 transition-all group btn-3d" href="#">
+                            START ESTIMATOR
+                            <span class="material-symbols-outlined text-4xl transition-transform group-hover:translate-x-4">rocket_launch</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary py-24 border-t border-white/5 relative">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-start gap-16">
+<div class="max-w-sm">
+<div class="text-h2 font-bold text-on-primary mb-6 tracking-tight cursor-pointer hover:text-secondary-container transition-colors">PristinePro</div>
+<p class="font-body-md opacity-50 leading-relaxed mb-8">PristinePro Industrial Washing. Delivering surgical precision in exterior asset maintenance for global institutions and private estates.</p>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/40 cursor-pointer transition-all"><span class="material-symbols-outlined">public</span></div>
+<div class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/40 cursor-pointer transition-all"><span class="material-symbols-outlined">mail</span></div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-16">
+<div>
+<h5 class="font-label-caps text-xs tracking-[0.2em] mb-8 text-secondary opacity-80">COMPANY</h5>
+<ul class="space-y-4 opacity-60">
+<li><a class="hover:text-white transition-colors" href="#">Our History</a></li>
+<li><a class="hover:text-white transition-colors" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Safety Rating</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-xs tracking-[0.2em] mb-8 text-secondary opacity-80">SERVICES</h5>
+<ul class="space-y-4 opacity-60">
+<li><a class="hover:text-white transition-colors" href="#">Residential</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Enterprise</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Restoration</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center opacity-40 text-xs tracking-widest uppercase">
+<p>© 2024 PRISTINEPRO INDUSTRIAL. ALL RIGHTS RESERVED.</p>
+<p>LICENSED • BONDED • INSURED</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 glass-panel border-t border-outline-variant/30 flex justify-around items-center px-4 py-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-secondary transition-colors" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[9px] mt-1 tracking-widest">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 relative after:content-[''] after:absolute after:top-[-8px] after:w-8 after:h-[2px] after:bg-secondary" href="services.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+<span class="font-label-caps text-[9px] mt-1 tracking-widest">SERVICES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-secondary transition-colors" href="quote.html">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-caps text-[9px] mt-1 tracking-widest">QUOTE</span>
+</a>
+</nav>
+<script>
+        // Reveal Observer
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active'); 
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal-section').forEach(el => observer.observe(el));
+
+        // Interactive 3D Perspective Tilt
+        const tiltContainers = document.querySelectorAll('.perspective-container');
+        tiltContainers.forEach(container => {
+            const card = container.querySelector('.tilt-card');
+            if (!card) return;
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (centerY - y) / 25;
+                const rotateY = (x - centerX) / 35;
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            });
+        });
+
+        // Parallax Effect for backgrounds
+        window.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            parallaxElements.forEach(el => {
+                const speed = 0.4;
+                const rect = el.getBoundingClientRect();
+                const offset = window.pageYOffset;
+                el.style.backgroundPositionY = `${(offset - el.offsetTop) * speed}px`;
+            });
+        });
+    </script>
+</body></html>

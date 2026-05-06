@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PristinePro | Transformation Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#f9f9f9",
+                "primary-container": "#1a365d",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#f9f9f9",
+                "tertiary": "#1b2127",
+                "on-secondary-fixed": "#001d37",
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-container": "#004172",
+                "outline-variant": "#c4c6cf",
+                "inverse-primary": "#adc7f7",
+                "inverse-on-surface": "#f0f1f1",
+                "on-surface": "#1a1c1c",
+                "surface-container": "#eeeeee",
+                "on-primary-container": "#86a0cd",
+                "tertiary-container": "#30363c",
+                "on-primary": "#ffffff",
+                "surface-dim": "#dadada",
+                "on-primary-fixed-variant": "#2d476f",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "primary-fixed": "#d6e3ff",
+                "on-tertiary-fixed-variant": "#41474e",
+                "error-container": "#ffdad6",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#00497e",
+                "on-primary-fixed": "#001b3c",
+                "secondary-container": "#66affe",
+                "on-error-container": "#93000a",
+                "surface": "#f9f9f9",
+                "surface-container-high": "#e8e8e8",
+                "secondary-fixed": "#d2e4ff",
+                "surface-container-low": "#f3f3f4",
+                "secondary-fixed-dim": "#9fcaff",
+                "surface-tint": "#455f88",
+                "surface-container-highest": "#e2e2e2",
+                "surface-variant": "#e2e2e2",
+                "on-surface-variant": "#43474e",
+                "inverse-surface": "#2f3131",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#dde3eb",
+                "on-background": "#1a1c1c",
+                "on-tertiary-container": "#989fa6",
+                "secondary": "#0061a5",
+                "primary-fixed-dim": "#adc7f7",
+                "outline": "#74777f",
+                "primary": "#002045",
+                "on-tertiary-fixed": "#161c22"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "stack-md": "24px",
+                "gutter": "24px",
+                "section-padding": "80px",
+                "container-max": "1280px",
+                "base": "8px",
+                "stack-sm": "12px",
+                "stack-lg": "48px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Public Sans"
+                ],
+                "h3": [
+                        "Inter"
+                ],
+                "h2": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Public Sans"
+                ],
+                "h1": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h3": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "h2": [
+                        "36px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h1": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        html { zoom: 0.9; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: scale(0.95) translateY(40px);
+            transition: opacity 1s cubic-bezier(0.2, 1, 0.3, 1), transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .portfolio-card {
+            perspective: 2000px;
+        }
+        .card-inner {
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 32, 69, 0.1);
+        }
+        .group:hover .card-inner {
+            transform: rotateX(6deg) rotateY(-4deg) translateY(-8px);
+            border-color: rgba(0, 32, 69, 0.2);
+            box-shadow: 0 30px 60px -15px rgba(0, 32, 69, 0.15);
+        }
+        
+        .img-hover-zoom {
+            transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .group:hover .img-hover-zoom {
+            transform: scale(1.08);
+        }
+
+        .gradient-mesh {
+            background-color: #002045;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(210,100%,20%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(215,95%,15%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(220,90%,20%,1) 0, transparent 50%);
+        }
+
+        .case-study-overlay {
+            background: linear-gradient(0deg, rgba(0,32,69,0.95) 0%, rgba(0,32,69,0.7) 40%, rgba(0,32,69,0) 100%);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .case-study-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .comparison-slider {
+            position: relative;
+            cursor: ew-resize;
+            overflow: hidden;
+            user-select: none;
+        }
+        .comparison-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+        .comparison-handle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 2rem;
+            }
+            .masonry-item-wide { grid-column: span 8; }
+            .masonry-item-tall { grid-column: span 4; grid-row: span 2; }
+            .masonry-item-normal { grid-column: span 4; }
+        }
+
+        .text-glow-light {
+            text-shadow: 0 0 30px rgba(0, 32, 69, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest/80 backdrop-blur-2xl sticky top-0 z-[100] border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
+<div class="text-h3 font-h3 font-bold text-primary tracking-tighter">PristinePro</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-primary relative after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-primary font-bold" href="gallery.html">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="pricing.html">Pricing</a>
+</div>
+<a href="quote.html" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-secondary active:scale-95 transition-all duration-300 shadow-xl shadow-primary/20 text-label-caps">
+            Get a Quote
+        </a>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="bg-white relative overflow-hidden pt-32 pb-48 px-gutter text-center border-b border-outline-variant/20">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,_#d2e4ff_0%,_transparent_60%)] opacity-30"></div>
+<div class="parallax-bg absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 mix-blend-multiply" data-parallax-speed="0.05"></div>
+</div>
+<div class="max-w-4xl mx-auto relative z-10 scroll-reveal">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/10 text-secondary font-label-caps text-[10px] uppercase tracking-[0.2em] mb-8 border border-secondary/20 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                The Transformation Archive
+            </div>
+<h1 class="font-h1 text-[56px] md:text-[72px] text-primary mb-stack-sm leading-[0.95] tracking-tighter text-glow-light">Visual Excellence.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                Exploring the boundary between weathered decay and pristine restoration. Our high-end gallery showcases the surgical precision of industrial washing.
+            </p>
+</div>
+</section>
+<!-- Filters & Utility Bar -->
+<section class="max-w-container-max mx-auto px-gutter -mt-12 mb-20 relative z-20 scroll-reveal">
+<div class="bg-white/80 backdrop-blur-3xl border border-outline-variant/40 rounded-3xl p-6 shadow-2xl shadow-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-10 py-3 rounded-full bg-primary text-on-primary font-bold text-label-caps shadow-2xl shadow-primary/30 hover:scale-105 transition-all">All Archive</button>
+<button class="px-10 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-label-caps hover:bg-primary/5 hover:text-primary transition-all border border-outline-variant/30">Residential</button>
+<button class="px-10 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-label-caps hover:bg-primary/5 hover:text-primary transition-all border border-outline-variant/30">Commercial</button>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant/60 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>Showing 12 Recent Projects</span>
+</div>
+</div>
+</section>
+<!-- Masonry Gallery Grid -->
+<section class="max-w-container-max mx-auto px-gutter py-12">
+<div class="masonry-grid space-y-8 md:space-y-0">
+<!-- Large Feature -->
+<div class="masonry-item-wide portfolio-card group scroll-reveal">
+<div class="card-inner relative rounded-3xl overflow-hidden aspect-[16/9] md:h-[600px]">
+<div class="comparison-slider h-full w-full">
+<div class="absolute inset-0 bg-gray-100 grayscale">
+<img alt="Before" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4R_TxtrhmrLYaB1Zt9bTNTkR6SuCeakfLHIyWlOvqRY4bnm0x4Ym-u-3Iy4NvFUipnz88n-ZuhjA5VI8LMqeMTbN26V7qcXPEDcEXByNqhSNUeksDAaq9Mq85wZjnHD1jUt6BHN7C_w2jGfv9Od4Z4kyGFE5PaDHFNTBB1Rblt-Hy6lmfTjatN91EcTa8xgK5eEZQ-FmS6Ge9C0vfjl2agiCh8nAOpCG_7Mk09B3jtnwYiP-dyD9O-v--psULss_DAPCZ7Tjubw4"/>
+</div>
+<div class="comparison-overlay">
+<img alt="After" class="absolute top-0 left-0 w-screen h-full object-cover max-w-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz0EVKRmGbsBOIuIqFyYa--zdyrOdCT6Np2CaGFz85BGKK7Nyc5_ilCW5Ap5ApRNVx48mM_ox_eCAWU7fGqU6phWTaRCbSNpsty5vPFAFLxL-6JO2fJeFnDTIG26DIQuuM9XRUm4mCNnlTPBQmNdO5CGgekakuclbwkir1UJg9qckz0eHHIB1IOY-FndkLTDcaI-QRsoOSrNMl9eUguD6_uTt71I8L7wWzXhHKPIn_jDPWNDEGhvMeVxkcbSEb65lnB2Gb-3HD0uE"/>
+</div>
+<div class="comparison-handle flex items-center justify-center">
+<div class="bg-primary text-on-primary p-4 rounded-full shadow-2xl relative z-10 border border-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-[24px]">unfold_more</span>
+</div>
+</div>
+</div>
+<div class="case-study-overlay absolute inset-0 flex flex-col justify-end p-12 text-white">
+<span class="bg-secondary/60 backdrop-blur-md text-on-secondary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit border border-white/10">Industrial</span>
+<h3 class="text-h2 mb-4 tracking-tight">Logistics Hub Restoration</h3>
+<p class="max-w-xl text-body-lg text-white/80 mb-6">A complete 250,000 sq. ft. metal facade rejuvenation involving heavy degreasing and protective sealing.</p>
+<button class="flex items-center gap-2 font-bold text-label-caps group/btn text-secondary-fixed hover:text-white transition-colors">
+                            View Full Case Study <span class="material-symbols-outlined text-[20px] group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tall Card -->
+<div class="masonry-item-tall portfolio-card group scroll-reveal" style="transition-delay: 100ms;">
+<div class="card-inner relative rounded-3xl overflow-hidden h-full">
+<img alt="Coastal Estate" class="img-hover-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhs_MnELucpAMMvjV0lfyYw5pjTtj2nkQvtYoXEGTjEzPriqmjnORue1ZlP5edU1aBPJs7dKyVFM5Vqq0sy8DqsKZmCg5CV0ARj7J_mk-HrYuhJdq4R0dYvs5_-c1uR_aC90Fg_G5LlYjHpAodsZpHvN8YohRJ5C4swDWwBbHllTuuDtcdapTv_P8D1CU-zU9B4m9aVdpjOSz89E_6Xpz9CZxX-fSEDOESLamlL-b3Gnhp8yi1c5IA61fcaRvZqg2sPPsxutkyHBo"/>
+<div class="case-study-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+<span class="bg-secondary/60 backdrop-blur-md text-on-secondary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit border border-white/10">Residential</span>
+<h3 class="text-h3 mb-4 tracking-tight">Malibu Coast Estate</h3>
+<p class="max-w-xl text-body-md text-white/80 mb-6">Removal of salt-air oxidation and mineral deposits from high-end architectural glazing.</p>
+<button class="flex items-center gap-2 font-bold text-label-caps group/btn text-secondary-fixed hover:text-white transition-colors">
+                            View Study <span class="material-symbols-outlined text-[20px] group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Normal Card -->
+<div class="masonry-item-normal portfolio-card group scroll-reveal" style="transition-delay: 200ms;">
+<div class="card-inner relative rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-80">
+<img alt="Financial Plaza" class="img-hover-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdPkyrs9yVIM4gObasgXaJvy5OHw19fWQVDVCwXon_f_HPcGX4FkBnEP5Lm7O3AE7TzuNKNRPepEjjlGsDSz0uwtBB3lvTAJI_kqxklX4L-pKP9BbuK0WhnqTxL-kqDi__cZKJij9qmmRbr5_X-i9D1fF0Btj5Z7GHg7A-ZNor1DfbdTzCig75bNgPQ2NbxSbrLU2606ZURnNy9FPx_A98Hnke8KTY8siwKP7KoXtxpIDBeSJs60gHfxX_8SePXtFCR3VsGGDWr_0"/>
+<div class="case-study-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+<span class="bg-secondary/60 backdrop-blur-md text-on-secondary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit border border-white/10">Commercial</span>
+<h3 class="text-h3 mb-2 tracking-tight">Glass Tower Re-Finish</h3>
+<button class="flex items-center gap-2 font-bold text-label-caps group/btn text-secondary-fixed hover:text-white transition-colors">
+                            Details <span class="material-symbols-outlined text-[20px] group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Normal Card -->
+<div class="masonry-item-normal portfolio-card group scroll-reveal" style="transition-delay: 300ms;">
+<div class="card-inner relative rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-80">
+<img alt="Heritage Deck" class="img-hover-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoon7ph3vUR2OmDLA_nU8Hv2Jq8U2iXSJMobXXLgiTwXSlFPMJ4sF6SY11ec7W7HhXGaDaBCLgXZcRbA6kXalRRfoZsKyOfgrlChaLQhsjch5yqe0OR2NPKLnAfh174_mI5Wbd0ItVlwaEUkDbHgPA8qIzP4HEIaPG2MhPw6ZshuNuDoixxh8lDmvnW31Qu_ebBuxnZGg0_vGHGmUwGh7dCg4gDiPjlPqeWWgw2r6tE6csHJTZaqyT5LgUj2m_ta1WR8wXZ3TxCjU"/>
+<div class="case-study-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+<span class="bg-secondary/60 backdrop-blur-md text-on-secondary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit border border-white/10">Heritage</span>
+<h3 class="text-h3 mb-2 tracking-tight">Stone Revitalization</h3>
+<button class="flex items-center gap-2 font-bold text-label-caps group/btn text-secondary-fixed hover:text-white transition-colors">
+                            Details <span class="material-symbols-outlined text-[20px] group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Carousel -->
+<section class="bg-surface-container-low/60 py-32 overflow-hidden border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter scroll-reveal">
+<div class="text-center mb-20">
+<h2 class="font-h1 text-[48px] md:text-[64px] text-primary mb-4 tracking-tighter leading-none italic text-glow-light">"Impeccable finish."</h2>
+<p class="font-label-caps text-on-surface-variant/50 font-bold uppercase tracking-[0.4em] text-xs">Voices of our Prestigious Clients</p>
+</div>
+<div class="relative group/carousel">
+<div class="testimonial-track flex" id="testimonialTrack">
+<!-- Testimonial 1 -->
+<div class="min-w-full px-4 md:px-20 text-center">
+<p class="text-[28px] md:text-[42px] font-light leading-snug mb-12 text-on-surface/90 max-w-4xl mx-auto tracking-tight">
+                            The transformation of our corporate HQ was surgical. PristinePro restored surfaces we thought were permanently aged.
+                        </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-1 bg-primary mb-6"></div>
+<span class="font-h3 text-primary text-xl">Marcus Vancorp</span>
+<span class="font-label-caps text-on-surface-variant text-[10px] tracking-widest uppercase mt-2">CEO, Meridian Group</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-full px-4 md:px-20 text-center">
+<p class="text-[28px] md:text-[42px] font-light leading-snug mb-12 text-on-surface/90 max-w-4xl mx-auto tracking-tight">
+                            Absolute precision. Their industrial washing protocols are levels above anything else in the market.
+                        </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-1 bg-primary mb-6"></div>
+<span class="font-h3 text-primary text-xl">Elena Sterling</span>
+<span class="font-label-caps text-on-surface-variant text-[10px] tracking-widest uppercase mt-2">Property Director, Sterling Estates</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-16">
+<button class="w-14 h-14 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 active:scale-90" onclick="moveTestimonial(-1)">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-14 h-14 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 active:scale-90" onclick="moveTestimonial(1)">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="max-w-container-max mx-auto px-gutter py-32 scroll-reveal">
+<div class="gradient-mesh rounded-[48px] p-12 md:p-24 flex flex-col md:flex-row items-center justify-between gap-12 shadow-[0_50px_100px_-20px_rgba(0,32,69,0.3)] relative overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-5"></div>
+<div class="text-center md:text-left relative z-10">
+<h2 class="font-h1 text-[48px] md:text-[72px] text-white mb-8 tracking-tighter leading-[0.95] text-glow">Ready for the<br/>transformation?</h2>
+<p class="font-body-lg text-body-lg text-white/70 max-w-lg mb-0 leading-relaxed">Join 500+ premium estates and industrial hubs who trust PristinePro for surgical-grade surface restoration.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto">
+<button class="bg-white text-primary font-bold px-12 py-6 rounded-2xl shadow-2xl hover:bg-secondary-fixed-dim hover:-translate-y-2 transition-all duration-500 text-lg active:scale-95 group">
+                    Secure Free Quote
+                    <span class="material-symbols-outlined ml-2 align-middle group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/5 backdrop-blur-xl text-white font-bold px-12 py-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-500 text-lg">
+                    Full Portfolio
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="pt-32 pb-12 border-t bg-primary border-white/10">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+<div class="md:col-span-2">
+<div class="text-h2 mb-8 tracking-tighter text-white">PristinePro</div>
+<p class="text-body-lg max-w-sm mb-10 leading-relaxed text-on-primary-container">Defining the standard for industrial clarity. We provide ultra-high performance cleaning solutions for high-value architectural assets.</p>
+<div class="flex gap-4"><a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a><a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-[20px]">mail</span></a><a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-[20px]">call</span></a></div>
+</div>
+<div>
+<h5 class="font-bold mb-8 font-label-caps tracking-[0.2em] uppercase text-[11px] text-white">Navigation</h5>
+<ul class="space-y-4 text-on-surface-variant"><li><a class="transition-colors text-white/70 hover:text-white" href="#">Archive</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Process</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Safety</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Clients</a></li></ul>
+</div>
+<div>
+<h5 class="font-bold mb-8 font-label-caps tracking-[0.2em] uppercase text-[11px] text-white">Legal</h5>
+<ul class="space-y-4 text-on-surface-variant"><li><a class="transition-colors text-white/70 hover:text-white" href="#">Archive</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Process</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Safety</a></li><li><a class="transition-colors text-white/70 hover:text-white" href="#">Clients</a></li></ul>
+</div>
+</div>
+<div class="border-t pt-12 flex flex-col md:flex-row justify-between items-center gap-6 border-white/10">
+<p class="text-xs font-label-caps tracking-widest">© 2024 PRISTINEPRO INDUSTRIAL ARCHIVE.</p>
+<div class="flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.3em]">
+<span class="hover:text-on-surface transition-colors cursor-default">Certified Excellence</span>
+<span class="hover:text-on-surface transition-colors cursor-default">Bonded &amp; Insured</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<div class="md:hidden fixed bottom-8 left-6 right-6 z-[100] bg-white/80 backdrop-blur-3xl border border-outline-variant/40 shadow-2xl flex justify-around items-center px-4 py-4 rounded-[2.5rem]">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant/60" href="index.html">
+<span class="material-symbols-outlined text-[24px]">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant/60" href="services.html">
+<span class="material-symbols-outlined text-[24px]">cleaning_services</span>
+</a>
+<a class="flex flex-col items-center gap-1 bg-primary text-on-primary px-10 py-3 rounded-full shadow-2xl shadow-primary/40" href="gallery.html">
+<span class="material-symbols-outlined text-[24px]">gallery_thumbnail</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant/60" href="quote.html">
+<span class="material-symbols-outlined text-[24px]">request_quote</span>
+</a>
+</div>
+<script>
+    // Intersection Observer for Scroll Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(revealCallback, observerOptions);
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelectorAll('.parallax-bg').forEach(el => {
+            const speed = el.dataset.parallaxSpeed || 0.1;
+            el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // Before/After Interactive Slider
+    document.querySelectorAll('.comparison-slider').forEach(slider => {
+        const overlay = slider.querySelector('.comparison-overlay');
+        const handle = slider.querySelector('.comparison-handle');
+        
+        const moveSlider = (e) => {
+            const rect = slider.getBoundingClientRect();
+            let x = e.clientX || (e.touches && e.touches[0].clientX);
+            if (!x) return;
+            let position = ((x - rect.left) / rect.width) * 100;
+            
+            if (position < 0) position = 0;
+            if (position > 100) position = 100;
+            
+            overlay.style.width = `${position}%`;
+            handle.style.left = `${position}%`;
+        };
+
+        slider.addEventListener('mousemove', moveSlider);
+        slider.addEventListener('touchmove', moveSlider);
+    });
+
+    // Testimonials Carousel Logic
+    let currentTestimonial = 0;
+    const track = document.getElementById('testimonialTrack');
+    const testimonials = track.children.length;
+
+    function moveTestimonial(dir) {
+        currentTestimonial = (currentTestimonial + dir + testimonials) % testimonials;
+        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+    }
+
+    // Auto-advance testimonials
+    let autoPlay = setInterval(() => moveTestimonial(1), 10000);
+    
+    // Pause on interaction
+    document.querySelector('.group/carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
+</script>
+</body></html>

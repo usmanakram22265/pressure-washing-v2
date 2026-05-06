@@ -1,0 +1,14 @@
+# Temp / screenshots
+temporary screenshots/
+.tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+*.env
+
+# Node
+node_modules/
