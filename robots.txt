@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /react-app/
+Disallow: /_archived/
+
+Sitemap: https://primestarwash.com/sitemap.xml
