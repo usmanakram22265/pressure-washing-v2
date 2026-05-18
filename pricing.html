@@ -25,7 +25,7 @@
         theme: {
           extend: {
             "colors": {
-                    "primary": "#002045",
+                    "primary": "#0a2a5e",
                     "on-surface": "#1a1c1c",
                     "inverse-surface": "#2f3131",
                     "tertiary-fixed-dim": "#c1c7cf",
@@ -61,16 +61,18 @@
                     "surface-container-low": "#f3f3f4",
                     "tertiary-container": "#30363c",
                     "surface-tint": "#455f88",
-                    "secondary": "#0061a5",
+                    "secondary": "#ff6a1f",
                     "on-tertiary": "#ffffff",
                     "surface-container-lowest": "#ffffff",
                     "on-secondary-fixed-variant": "#00497e",
-                    "secondary-container": "#66affe",
+                    "secondary-container": "#ffaa70",
                     "on-tertiary-fixed-variant": "#41474e",
                     "on-secondary-fixed": "#001d37",
                     "on-primary": "#ffffff",
+                    "accent": "#ff6a1f",
+                    "accent-hover": "#e25510",
                     "background": "#f9f9f9",
-                    "primary-container": "#1a365d",
+                    "primary-container": "#143a73",
                     "surface-container-highest": "#e2e2e2"
             },
             "borderRadius": {
@@ -113,16 +115,22 @@
 <!-- TopNavBar -->
 <header class="bg-surface-container-lowest/80 backdrop-blur-2xl sticky top-0 z-[100] border-b border-outline-variant/30">
 <nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
-<div class="text-h3 font-h3 font-bold text-primary tracking-tighter">PristinePro</div>
+<a href="index.html" class="flex items-center gap-3"><img src="brand_assets/primestar-logo.png" alt="PrimeStar Wash" class="h-11 w-11 rounded-full object-cover"/><span class="text-[20px] font-h3 font-bold text-primary tracking-tighter">PrimeStar Wash</span></a>
 <div class="hidden md:flex items-center gap-10">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
-<a class="font-label-caps text-label-caps text-primary relative after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-primary font-bold" href="pricing.html">Pricing</a>
+<a class="font-label-caps text-[15px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-caps text-[15px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="font-label-caps text-[15px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-caps text-[15px] text-primary relative after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-[2px] after:bg-primary font-bold" href="pricing.html">Pricing</a>
+<a class="font-label-caps text-[15px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About</a>
 </div>
-<a href="quote.html" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-secondary active:scale-95 transition-all duration-300 shadow-xl shadow-primary/20 text-label-caps">
-            Get a Quote
-        </a>
+<div class="flex items-center gap-5">
+<div class="hidden md:flex items-center gap-3">
+<a href="https://instagram.com/169powerwash" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition-colors duration-300" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+<a href="#" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition-colors duration-300" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+</div>
+<a href="tel:8323292641" class="hidden md:flex items-center gap-2 text-primary font-bold hover:text-secondary transition-colors duration-300 text-[14px]"><span class="material-symbols-outlined text-[22px]">call</span><span>832-329-2641</span></a>
+<a href="quote.html" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-secondary active:scale-95 transition-all duration-300 shadow-xl shadow-primary/20 text-[14px]">Get a Quote</a>
+</div>
 </nav>
 </header>
 <main class="overflow-hidden">
@@ -130,8 +138,8 @@
 <section class="relative px-gutter py-section-padding perspective-1000">
 <div class="max-w-container-max mx-auto text-center mb-stack-lg">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Transparent Investment</span>
-<h1 class="font-h1 text-h1 text-primary mb-6">Tiered Solutions for Renewed Clarity</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Precision-engineered cleaning packages designed for maximum impact and long-term property preservation.</p>
+<h1 class="font-h1 text-h1 text-primary mb-6">Honest, Upfront Pricing</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Flat-rate packages for Houston homes and businesses. No surprises, no hidden fees.</p>
 </div>
 <!-- Pricing Grid -->
 <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 preserve-3d">
@@ -253,7 +261,7 @@
 </div>
 </div>
 <div class="relative preserve-3d rotate-x-12">
-<img alt="Industrial Pressure Washing Equipment" class="rounded-2xl shadow-2xl border-4 border-on-primary-fixed-variant" data-alt="A professional-grade high-pressure industrial washing machine standing on a wet concrete surface. The equipment is sleek and modern, constructed from brushed steel and vibrant blue plastics. Soft morning sunlight reflects off the water on the floor, creating a clean, high-contrast atmosphere. The scene is shot with a shallow depth of field, highlighting the precision nozzles and heavy-duty hoses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8_0JP_h4J6YfIgarq-zN5ZYz7N0Eud8k9Lj0h8FYsmn5ahMvJNRqgESpp03bHFeJSHc8Kx29RK-1mPUkZwmMNSumm4rC4d0oRltob2AOe8UJcuOqTHTGqFipWbBkBpUhJW9q2VCs8tc1Z2gq4iTXY35CYt3pH2BpKq3JFOfl2s8CUxGJn4uWVVHfoKY5YQriaKWZk2SiEIsNnIvWOri8N91KNcJT5Xhu5DY4ZytWmg2pHZbngZNeXLl-_5PV9WZY7c2l4QIsApjs"/>
+<img alt="Industrial Pressure Washing Equipment" class="rounded-2xl shadow-2xl border-4 border-on-primary-fixed-variant" data-alt="A professional-grade high-pressure industrial washing machine standing on a wet concrete surface. The equipment is sleek and modern, constructed from brushed steel and vibrant blue plastics. Soft morning sunlight reflects off the water on the floor, creating a clean, high-contrast atmosphere. The scene is shot with a shallow depth of field, highlighting the precision nozzles and heavy-duty hoses." src="https://static.wixstatic.com/media/1ff53d_5fa7a468b4fa40d08b57da5b6e602cc5~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/img.jpg"/>
 <div class="absolute -bottom-8 -right-8 bg-secondary p-8 rounded-xl shadow-xl hidden md:block">
 <span class="material-symbols-outlined text-4xl mb-2 block" data-icon="verified_user">verified_user</span>
 <div class="font-bold">Guaranteed Price</div>
@@ -284,7 +292,7 @@
 <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
 </button>
 <div class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            PristinePro carries a $5M general liability policy and is fully bonded. We provide COI documentation within 24 hours of project engagement for all industrial and commercial clients.
+                            PrimeStar Wash carries a $5M general liability policy and is fully bonded. We provide COI documentation within 24 hours of project engagement for all industrial and commercial clients.
                         </div>
 </div>
 <!-- FAQ 3 -->
@@ -322,8 +330,9 @@
 <div class="max-w-container-max mx-auto px-gutter py-stack-lg">
 <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
 <div class="max-w-sm">
-<div class="text-h3 font-h3 font-bold mb-4">PristinePro</div>
-<p class="text-on-primary-container opacity-80 font-body-md">Providing industrial-grade clarity and surface restoration for luxury estates and commercial facilities across the region.</p>
+<a href="index.html" class="flex items-center gap-3 mb-4"><img src="brand_assets/primestar-logo.png" alt="PrimeStar Wash" class="h-12 w-12 rounded-full object-cover"/><span class="text-h3 font-h3 font-bold text-white">PrimeStar Wash</span></a>
+<p class="text-on-primary-container opacity-80 font-body-md">Pressure washing &amp; soft-wash services for Houston, TX. 832-329-2641 · info169pw@gmail.com</p>
+<p class="text-white/50 text-sm mt-2">7600 Highmeadow Dr, Houston, TX 77063</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
 <div class="space-y-4">
@@ -346,15 +355,15 @@
 <div class="space-y-4">
 <div class="font-bold text-secondary-container">Contact</div>
 <ul class="space-y-2 opacity-70 font-body-md">
-<li>Support: 555-0123</li>
-<li>Quotes: 555-0199</li>
-<li>hello@pristinepro.com</li>
+<li><a href="tel:8323292641" class="hover:text-white">832-329-2641</a></li>
+<li><a href="mailto:info169pw@gmail.com" class="hover:text-white">info169pw@gmail.com</a></li>
+<li><a href="https://instagram.com/169powerwash" target="_blank" rel="noopener" class="hover:text-white">@169powerwash</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="pt-8 border-t border-on-primary-fixed-variant flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60 font-body-md">
-<div>© 2024 PristinePro Industrial Washing. Licensed &amp; Bonded.</div>
+<div>© 2025 PrimeStar Wash — Houston, TX. Licensed · Bonded · Insured.</div>
 <div class="flex gap-6">
 <a class="hover:text-secondary-container transition-colors" href="#">Service Areas</a>
 <a class="hover:text-secondary-container transition-colors" href="#">Sitemap</a>
