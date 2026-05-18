@@ -637,9 +637,8 @@
       <p class="text-primary font-bold text-lg">We'll reach you within <span class="text-secondary">one hour</span>.</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-    emailjs.init('YOUR_PUBLIC_KEY');
+    const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
     function toggleService(card) {
       card.classList.toggle('selected');
       document.getElementById('service-error').classList.remove('show');
@@ -670,10 +669,12 @@
       const btn = document.getElementById('quote-submit-btn');
       btn.disabled = true;
       btn.innerHTML = '<div class="relative z-10 flex items-center justify-center gap-3"><span class="material-symbols-outlined text-2xl" style="animation:spin 1s linear infinite">autorenew</span>Sending…</div>';
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        services, client_name: name, client_address: address,
-        client_phone: phone || '—', client_email: email || '—'
-      }).then(() => {
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ services, client_name: name, client_address: address,
+          client_phone: phone || '—', client_email: email || '—' })
+      }).then(r => r.json()).then(data => {
+        if (data.status !== 'ok') throw new Error();
         document.getElementById('quote-form').style.display = 'none';
         document.getElementById('quote-success').classList.remove('hidden');
       }).catch(() => {

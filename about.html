@@ -30,29 +30,98 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Inter:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Inter:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Inter:wght@600;700;800&display=swap" rel="stylesheet"/></noscript>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet"/></noscript>
 <script id="tailwind-config">
 tailwind.config = {
+  darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        primary: "#0a2a5e",
-        secondary: "#ff6a1f",
-        "primary-container": "#143a73",
-        "on-surface-variant": "#43474e",
+      "colors": {
+        "error-container": "#ffdad6",
+        "on-primary-fixed-variant": "#2d476f",
+        "on-error-container": "#93000a",
+        "background": "#f8fafc",
+        "inverse-on-surface": "#f0f1f1",
         "surface-container-low": "#f3f3f4",
-        accent: "#ff6a1f",
+        "secondary-fixed-dim": "#9fcaff",
+        "primary-fixed-dim": "#adc7f7",
+        "on-background": "#1a1c1c",
+        "secondary": "#ff6a1f",
+        "tertiary-fixed": "#dde3eb",
+        "on-tertiary-container": "#989fa6",
+        "on-secondary-fixed-variant": "#00497e",
+        "on-secondary-fixed": "#001d37",
+        "surface-container-lowest": "#ffffff",
+        "tertiary-fixed-dim": "#c1c7cf",
+        "primary": "#0a2a5e",
+        "outline-variant": "#c4c6cf",
+        "surface-container-highest": "#e2e2e2",
+        "surface-container": "#eeeeee",
+        "surface": "#f9f9f9",
+        "on-primary-fixed": "#001b3c",
+        "inverse-primary": "#adc7f7",
+        "surface-dim": "#dadada",
+        "primary-fixed": "#d6e3ff",
+        "primary-container": "#143a73",
+        "tertiary": "#1b2127",
+        "outline": "#74777f",
+        "surface-container-high": "#e8e8e8",
+        "secondary-fixed": "#d2e4ff",
+        "on-secondary-container": "#004172",
+        "on-error": "#ffffff",
+        "on-tertiary-fixed": "#161c22",
+        "on-surface-variant": "#43474e",
+        "on-surface": "#1a1c1c",
+        "on-secondary": "#ffffff",
+        "on-primary": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "error": "#ba1a1a",
+        "on-primary-container": "#86a0cd",
+        "surface-tint": "#455f88",
+        "surface-bright": "#f9f9f9",
+        "inverse-surface": "#2f3131",
+        "secondary-container": "#ffaa70",
+        "on-tertiary-fixed-variant": "#41474e",
+        "surface-variant": "#e2e2e2",
+        "tertiary-container": "#30363c",
+        "accent": "#ff6a1f",
+        "accent-hover": "#e25510"
       },
-      spacing: {
-        gutter: "24px",
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "stack-lg": "48px",
+        "gutter": "24px",
+        "stack-md": "24px",
         "container-max": "1280px",
+        "stack-sm": "12px",
+        "section-padding": "80px",
+        "base": "8px"
       },
-      fontFamily: {
-        sans: ["Public Sans","sans-serif"],
-        heading: ["Inter","sans-serif"],
+      "fontFamily": {
+        "h2": ["Inter"],
+        "h1": ["Inter"],
+        "body-lg": ["Public Sans"],
+        "h3": ["Inter"],
+        "label-caps": ["Inter"],
+        "body-md": ["Public Sans"]
+      },
+      "fontSize": {
+        "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
       }
     }
   }
@@ -84,6 +153,10 @@ tailwind.config = {
   /* Header */
   #site-header { background:rgba(255,255,255,0); border-bottom-color:transparent; box-shadow:none; }
   #site-header.hdr-scrolled { background:rgba(255,255,255,0.88); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); border-bottom-color:rgba(0,0,0,0.07); box-shadow:0 2px 20px rgba(0,0,0,0.05); }
+  .dnav-link{position:relative;padding:5px 12px;border-radius:9999px;font-size:13px;font-weight:500;color:#5f6368;letter-spacing:0.01em;white-space:nowrap;transition:color 0.2s,background-color 0.2s;}
+  .dnav-link:hover{color:#0a2a5e;background:rgba(10,42,94,0.07);}
+  .dnav-link.active{color:#fff;background:#0a2a5e;font-weight:600;}
+  @media(min-width:1024px){.dnav-link{padding:6px 18px;font-size:14px;}}
   /* Hero */
   #hero { background: linear-gradient(135deg, #071d45 0%, #0a2a5e 45%, rgba(10,42,94,0.88) 70%, rgba(20,40,80,0.75) 100%); }
   /* Stat cards */
@@ -103,11 +176,17 @@ tailwind.config = {
 
 <!-- Header -->
 <header id="site-header" data-always-solid="true" class="sticky top-0 z-[100] border-b safe-header transition-[background-color,border-color,box-shadow] duration-300">
-<div class="flex items-center justify-between h-14 sm:h-16 lg:h-20 px-gutter max-w-[1280px] mx-auto">
+<div class="relative flex items-center justify-between h-14 sm:h-16 lg:h-20 px-gutter max-w-[1280px] mx-auto">
   <a href="index.html" class="flex items-center gap-2 sm:gap-3 shrink-0">
     <img src="brand_assets/primestar-logo.png" alt="PrimeStar Wash" class="h-9 w-9 sm:h-11 sm:w-11 lg:h-12 lg:w-12 rounded-full object-cover shrink-0" loading="lazy"/>
     <span class="hidden min-[360px]:inline text-[13px] sm:text-[17px] lg:text-[20px] font-bold text-[#0a2a5e] tracking-tight whitespace-nowrap">PrimeStar Wash</span>
   </a>
+  <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-0.5 lg:gap-1">
+    <a href="index.html" class="dnav-link">Home</a>
+    <a href="services.html" class="dnav-link">Services</a>
+    <a href="gallery.html" class="dnav-link">Gallery</a>
+    <a href="about.html" class="dnav-link active">About</a>
+  </nav>
   <div class="flex items-center gap-0.5 sm:gap-1.5 lg:gap-2 shrink-0">
     <a href="https://www.instagram.com/primestarwash/" target="_blank" rel="noopener" class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 flex items-center justify-center text-[#0a2a5e] hover:text-[#ff6a1f] rounded-full hover:bg-[#0a2a5e]/5 transition-colors duration-200" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" class="w-[19px] h-[19px] sm:w-[22px] sm:h-[22px] lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
     <a href="https://www.facebook.com/p/PrimeStarwash-100090342458851/" target="_blank" rel="noopener" class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 flex items-center justify-center text-[#0a2a5e] hover:text-[#ff6a1f] rounded-full hover:bg-[#0a2a5e]/5 transition-colors duration-200" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" class="w-[19px] h-[19px] sm:w-[22px] sm:h-[22px] lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -122,71 +201,98 @@ tailwind.config = {
 <!-- ── HERO ───────────────────────────────────────────────────── -->
 <section id="hero" class="relative md:min-h-[42vh] flex items-center overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <img src="brand_assets/company/front page 2 .jpg" alt="PrimeStar Wash crew" class="w-full h-full object-cover object-center opacity-30"/>
+    <img src="brand_assets/company/front page 2 .jpg" alt="PrimeStar Wash crew" class="w-full h-full object-cover object-center opacity-30" fetchpriority="high"/>
     <div class="absolute inset-0" style="background:linear-gradient(120deg,#0a2a5e 0%,#0a2a5e 42%,rgba(10,42,94,0.80) 65%,rgba(10,42,94,0.20) 100%)"></div>
     <div class="absolute inset-0" style="background:radial-gradient(ellipse at 15% 60%,rgba(255,106,31,0.13) 0%,transparent 55%)"></div>
   </div>
-  <div class="max-w-[1280px] mx-auto px-gutter relative z-10 w-full py-12 md:py-20">
-    <div class="max-w-2xl">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 text-[10px] font-bold border border-white/20 mb-5 uppercase tracking-[0.22em]">
-        <span class="material-symbols-outlined text-[14px] text-[#ff6a1f]">groups</span>
-        Houston, TX — Family Owned & Operated
+  <div class="max-w-[1280px] mx-auto px-gutter relative z-10 w-full py-12 md:py-16">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+
+      <!-- Left: text -->
+      <div class="flex-1 min-w-0">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 text-[10px] font-bold border border-white/20 mb-5 uppercase tracking-[0.22em]">
+          <span class="material-symbols-outlined text-[14px] text-[#ff6a1f]">groups</span>
+          Houston, TX — Family Owned & Operated
+        </div>
+        <h1 class="text-[32px] sm:text-[52px] lg:text-[62px] text-white font-bold leading-[0.97] tracking-tight mb-5 md:mb-7">
+          Built on One<br/><span class="italic font-medium text-[#ff6a1f]">Simple Promise.</span>
+        </h1>
+        <p class="text-white/70 text-[14px] md:text-xl leading-relaxed mb-7 md:mb-9 max-w-xl">
+          Show up on time, do the job right, and leave every property looking better than the customer expected. That's it. That's all we do.
+        </p>
+        <div class="flex flex-wrap gap-3 md:gap-4">
+          <a href="quote.html" class="bg-[#ff6a1f] text-white px-6 py-3.5 md:px-9 md:py-4 font-bold rounded-2xl shadow-2xl shadow-[#ff6a1f]/40 hover:bg-[#ff6a1f]/85 hover:-translate-y-0.5 transition-[transform,background-color] duration-200 flex items-center gap-2 active:scale-95 group text-[14px] md:text-base">
+            Get a Free Quote
+            <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+          </a>
+          <a href="services.html" class="bg-white/10 backdrop-blur-md text-white border border-white/25 px-6 py-3.5 md:px-9 md:py-4 font-bold rounded-2xl hover:bg-white/20 transition-colors duration-200 text-[14px] md:text-base">
+            See Our Services
+          </a>
+        </div>
+        <div class="flex flex-wrap items-center gap-5 md:gap-10 mt-7 pt-7 md:mt-10 md:pt-8 border-t border-white/10">
+          <div class="flex items-center gap-2">
+            <span class="text-yellow-400 text-base md:text-xl">★★★★★</span>
+            <span class="text-white font-black text-base md:text-xl">5.0</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">home</span>
+            500+ Homes Cleaned
+          </div>
+          <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">verified_user</span>
+            Licensed & Insured
+          </div>
+          <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">location_on</span>
+            Houston, TX
+          </div>
+        </div>
       </div>
-      <h1 class="text-[32px] sm:text-[52px] lg:text-[68px] text-white font-bold leading-[0.97] tracking-tight mb-5 md:mb-7">
-        Built on One<br/><span class="italic font-medium text-[#ff6a1f]">Simple Promise.</span>
-      </h1>
-      <p class="text-white/70 text-[14px] md:text-xl leading-relaxed mb-7 md:mb-9 max-w-xl">
-        Show up on time, do the job right, and leave every property looking better than the customer expected. That's it. That's all we do.
-      </p>
-      <div class="flex flex-wrap gap-3 md:gap-4">
-        <a href="quote.html" class="bg-[#ff6a1f] text-white px-6 py-3.5 md:px-9 md:py-4 font-bold rounded-2xl shadow-2xl shadow-[#ff6a1f]/40 hover:bg-[#ff6a1f]/85 hover:-translate-y-0.5 transition-[transform,background-color] duration-200 flex items-center gap-2 active:scale-95 group text-[14px] md:text-base">
-          Get a Free Quote
-          <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
-        </a>
-        <a href="services.html" class="bg-white/10 backdrop-blur-md text-white border border-white/25 px-6 py-3.5 md:px-9 md:py-4 font-bold rounded-2xl hover:bg-white/20 transition-colors duration-200 text-[14px] md:text-base">
-          See Our Services
-        </a>
-      </div>
-      <div class="flex flex-wrap items-center gap-5 md:gap-10 mt-7 pt-7 md:mt-10 md:pt-8 border-t border-white/10">
-        <div class="flex items-center gap-2">
-          <span class="text-yellow-400 text-base md:text-xl">★★★★★</span>
-          <span class="text-white font-black text-base md:text-xl">5.0</span>
+
+      <!-- Right: floating image — desktop only -->
+      <div class="hidden lg:block w-[44%] shrink-0 relative">
+        <div class="relative rounded-[36px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.45)] border border-white/15 bg-white" style="aspect-ratio:4/3;">
+          <img src="brand_assets/company/233338f2-afe8-46ab-895c-10187b5a6cb2.jpg" alt="PrimeStar Wash van" class="w-full h-full object-contain p-4"/>
         </div>
-        <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
-          <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">home</span>
-          500+ Homes Cleaned
+        <!-- Rating badge -->
+        <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-3.5 shadow-[0_16px_40px_rgba(0,0,0,0.25)] flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#ff6a1f] flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <div>
+            <div class="text-[#0a2a5e] font-black text-lg leading-none">5.0</div>
+            <div class="text-[#5f6368] text-[10px] font-semibold uppercase tracking-wider mt-0.5">Google Rating</div>
+          </div>
         </div>
-        <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
-          <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">verified_user</span>
-          Licensed & Insured
-        </div>
-        <div class="flex items-center gap-1.5 text-white/60 text-xs md:text-sm font-semibold">
-          <span class="material-symbols-outlined text-[15px] text-[#ff6a1f]">location_on</span>
-          Houston, TX
+        <!-- Jobs badge -->
+        <div class="absolute -top-4 -right-4 bg-[#ff6a1f] text-white rounded-2xl px-4 py-3 shadow-[0_12px_32px_rgba(255,106,31,0.45)] text-center">
+          <div class="font-black text-xl leading-none">500+</div>
+          <div class="text-[10px] font-bold uppercase tracking-wider opacity-90 mt-0.5">Jobs Done</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ── STATS BAR ───────────────────────────────────────────────── -->
-<section class="bg-[#0a2a5e] py-6 md:py-8">
+<section id="stats-section" class="bg-[#0a2a5e] py-6 md:py-8">
   <div class="max-w-[1280px] mx-auto px-gutter">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       <div class="stat-card p-4 md:p-6 text-center reveal delay-1">
-        <div class="text-[28px] md:text-[42px] font-black text-white leading-none mb-1">500+</div>
+        <div class="stat-num text-[28px] md:text-[42px] font-black text-white leading-none mb-1" data-count="500" data-suffix="+" data-decimals="0">0+</div>
         <div class="text-white/50 text-[10px] md:text-xs font-bold uppercase tracking-widest">Homes Cleaned</div>
       </div>
       <div class="stat-card p-4 md:p-6 text-center reveal delay-2">
-        <div class="text-[28px] md:text-[42px] font-black text-white leading-none mb-1">5.0</div>
+        <div class="stat-num text-[28px] md:text-[42px] font-black text-white leading-none mb-1" data-count="5.0" data-suffix="" data-decimals="1">0.0</div>
         <div class="text-white/50 text-[10px] md:text-xs font-bold uppercase tracking-widest">Star Rating</div>
       </div>
       <div class="stat-card p-4 md:p-6 text-center reveal delay-3">
-        <div class="text-[28px] md:text-[42px] font-black text-[#ff6a1f] leading-none mb-1">9</div>
+        <div class="stat-num text-[28px] md:text-[42px] font-black text-[#ff6a1f] leading-none mb-1" data-count="9" data-suffix="" data-decimals="0">0</div>
         <div class="text-white/50 text-[10px] md:text-xs font-bold uppercase tracking-widest">Services Offered</div>
       </div>
       <div class="stat-card p-4 md:p-6 text-center reveal delay-4">
-        <div class="text-[28px] md:text-[42px] font-black text-white leading-none mb-1">100%</div>
+        <div class="stat-num text-[28px] md:text-[42px] font-black text-white leading-none mb-1" data-count="100" data-suffix="%" data-decimals="0">0%</div>
         <div class="text-white/50 text-[10px] md:text-xs font-bold uppercase tracking-widest">Satisfaction</div>
       </div>
     </div>
@@ -199,7 +305,7 @@ tailwind.config = {
     <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
       <div class="reveal-left">
         <div class="relative rounded-[28px] overflow-hidden shadow-2xl" style="height:clamp(280px,55vw,520px)">
-          <img src="brand_assets/company/PrimeStar wash (7).png" alt="PrimeStar Wash at a Houston home" class="w-full h-full object-cover"/>
+          <img src="brand_assets/company/PrimeStar wash (7).jpg" alt="PrimeStar Wash at a Houston home" class="w-full h-full object-cover" loading="lazy"/>
           <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(10,42,94,0.5) 0%, transparent 50%)"></div>
           <div class="absolute bottom-4 left-4 right-4">
             <div class="bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl px-4 py-3 flex items-center gap-3">
@@ -310,7 +416,7 @@ tailwind.config = {
       </div>
       <!-- Photo grid -->
       <div class="grid grid-cols-2 gap-3 md:gap-4 reveal-right">
-        <div class="photo-slot h-40 md:h-64"><img src="brand_assets/company/Untitled design (17).png" alt="PrimeStar Wash van" loading="lazy"/></div>
+        <div class="photo-slot h-40 md:h-64"><img src="brand_assets/company/Untitled design (17).jpg" alt="PrimeStar Wash van" loading="lazy"/></div>
         <div class="photo-slot h-40 md:h-64 mt-6 md:mt-10"><img src="brand_assets/company/2.jpg" alt="Happy customer" loading="lazy"/></div>
         <div class="photo-slot h-40 md:h-64"><img src="brand_assets/company/4.jpg" alt="Houston home cleaned" loading="lazy"/></div>
         <div class="photo-slot h-40 md:h-64 mt-6 md:mt-10"><img src="brand_assets/company/photo_2025-04-03_21-38-43.jpg" alt="Satisfied customer" loading="lazy"/></div>
@@ -433,6 +539,36 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+
+// Count-up animation
+function runCountUp(el, delay) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals || '0');
+  const duration = 1800;
+  setTimeout(() => {
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (eased * target).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(decimals) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }, delay);
+}
+
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      statsObs.unobserve(e.target);
+      e.target.querySelectorAll('.stat-num').forEach((el, i) => runCountUp(el, i * 120));
+    }
+  });
+}, { threshold: 0.4 });
+const statsSection = document.getElementById('stats-section');
+if (statsSection) statsObs.observe(statsSection);
 </script>
 <script>(function(){var h=document.getElementById('site-header'),s=h&&h.dataset.alwaysSolid==='true';function u(){if(!h)return;(window.scrollY>10||s)?h.classList.add('hdr-scrolled'):h.classList.remove('hdr-scrolled');}window.addEventListener('scroll',u,{passive:true});u();})();</script>
 </body></html>
