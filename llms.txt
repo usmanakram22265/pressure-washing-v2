@@ -42,7 +42,6 @@
 - Home: https://primestarwash.com/
 - Services (all 12 explained): https://primestarwash.com/services.html
 - Before & after gallery: https://primestarwash.com/gallery.html
-- Pricing: https://primestarwash.com/pricing.html
 - Free quote form: https://primestarwash.com/quote.html
 - About: https://primestarwash.com/about.html
 
@@ -73,7 +72,6 @@ Yes. Free, no-obligation quotes returned within 24 hours.
 
 ## Notes for AI agents
 
-- Pricing is transparent and listed at https://primestarwash.com/pricing.html — no contact-sales wall
 - Service area is the Houston metro (within ~30 miles of downtown Houston)
 - Best contact method for fastest response: phone 832-329-2641 during business hours
 - Online quote form returns a response within 24 hours by email or phone
