@@ -747,8 +747,7 @@
   form.submit();
   document.body.removeChild(form);
   setTimeout(function() { document.body.removeChild(iframe); }, 5000);
-  document.getElementById('quote-form').style.display = 'none';
-  document.getElementById('quote-success').classList.remove('hidden');
+  setTimeout(function() { window.location.href = 'thank-you.html'; }, 800);
     }
     </script>
   </div>
